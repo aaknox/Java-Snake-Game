@@ -1,4 +1,4 @@
-package com.zetcode;
+package com.azhya;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -15,12 +15,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Board extends JPanel implements ActionListener {
-
-    private final int B_WIDTH = 300;
+public class Board extends JPanel implements ActionListener{
+	private static final long serialVersionUID = -573951407515388339L;
+	
+	private final int B_WIDTH = 300;
     private final int B_HEIGHT = 300;
     private final int DOT_SIZE = 10;
-    private final int ALL_DOTS = 900;
+    private final int ALL_DOTS = 1000;
     private final int RAND_POS = 29;
     private final int DELAY = 140;
 
@@ -116,7 +117,7 @@ public class Board extends JPanel implements ActionListener {
 
     private void gameOver(Graphics g) {
         
-        String msg = "Game Over";
+        String msg = "Game Over [PRESS Q to Exit]";
         Font small = new Font("Helvetica", Font.BOLD, 14);
         FontMetrics metr = getFontMetrics(small);
 
@@ -240,6 +241,11 @@ public class Board extends JPanel implements ActionListener {
                 rightDirection = false;
                 leftDirection = false;
             }
+            
+            if((key == KeyEvent.VK_Q)) {
+            	System.exit(0);
+            }
         }
     }
+
 }

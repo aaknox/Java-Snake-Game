@@ -1,11 +1,13 @@
-package com.zetcode;
+package com.azhya;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 
-public class Snake extends JFrame {
+public class Snake extends JFrame{
+	private static final long serialVersionUID = 3255617606206823346L;
 
-    public Snake() {
+
+	public Snake() {
         
         initUI();
     }
@@ -14,7 +16,7 @@ public class Snake extends JFrame {
         
         add(new Board());
                
-        setResizable(false);
+        setResizable(true);
         pack();
         
         setTitle("Snake");
